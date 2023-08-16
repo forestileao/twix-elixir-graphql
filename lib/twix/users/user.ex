@@ -4,7 +4,7 @@ defmodule Twix.Users.User do
 
   alias Twix.Posts.Post
 
-  @required_params [:nickname, :email, :birthdate]
+  @required_params [:nickname, :email, :age]
 
   schema "users" do
     field :nickname, :string

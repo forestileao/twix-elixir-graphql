@@ -1,4 +1,4 @@
-defmodule Twix.Posts.Posts do
+defmodule Twix.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -9,7 +9,6 @@ defmodule Twix.Posts.Posts do
   schema "posts" do
     field :text, :string
     field :likes, :integer, default: 0
-    field :age, :integer
     belongs_to :user, User
 
     timestamps()
