@@ -13,12 +13,14 @@ defmodule Twix.Posts.RemoveLike do
   defp add_like(post) do
     likes = post.likes - 1
 
-    if likes > 0 do
-      likes = 0
-      post = Changeset.change(post, likes: likes)
-      Repo.update(post)
-    else
-      post
-    end
+    likes =
+      if likes < 0 do
+        0
+      else
+        likes
+      end
+
+    post = Changeset.change(post, likes: likes)
+    Repo.update(post)
   end
 end

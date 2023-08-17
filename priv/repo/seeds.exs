@@ -36,5 +36,5 @@ user_list = [
 ]
 
 user_list
-|> Stream.map(&(User.changeset(&1)))
-|> Enum.each(&(Twix.Repo.insert!(&1)))
+|> Stream.map(&User.changeset(&1))
+|> Enum.each(&Twix.Repo.insert!(&1))
